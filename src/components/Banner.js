@@ -1,17 +1,21 @@
-const Banner = ({ isSmall = false, background = "", title = "" }) => {
+const Banner = ({ isSmall = false, background = '', title = '', subtitle = '' }) => {
   return (
     <div
-      className={`w-full ${
-        isSmall ? "p-20" : "p-40"
-      } flex flex-col justify-center items-center text-center gap-3 bg-cover bg-center text-white`}
+      className={`w-full flex flex-col justify-center items-center text-center bg-cover bg-center text-white ${
+        isSmall ? 'pt-48 pb-24' : 'min-h-screen'
+      }`}
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(${background})`,
+        backgroundImage: `linear-gradient(rgba(7, 18, 42, 0.75), rgba(7, 18, 42, 0.55)), url(${background})`,
       }}
     >
-      {title === "Tamarack Park Marina" ? (
-        <div className="text-3xl text-gray-300">WELCOME TO</div>
-      ) : null}
-      <div className="text-6xl">{title}</div>
+      <p className="text-gold tracking-[0.35em] uppercase text-xs mb-5">Tamarack Park Marina</p>
+      <h1 className={`font-serif leading-tight ${ isSmall ? 'text-5xl md:text-6xl' : 'text-6xl md:text-8xl' }`}>
+        {title}
+      </h1>
+      <div className="w-16 h-px bg-gold mx-auto mt-8" />
+      {subtitle && (
+        <p className="text-cream/70 text-lg mt-6 max-w-xl mx-auto px-6">{subtitle}</p>
+      )}
     </div>
   );
 };

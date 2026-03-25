@@ -1,32 +1,33 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
 
 const theme = {
   extend: {
     colors: {
-      primary: colors.blue[100],
-      textPrimary: colors.green[800],
-      error: colors.pink[500],
-
-      secondary: colors.purple[100],
-      textSecondary: colors.purple[900],
-
-      darkPrimary: colors.blue[900],
-      darkTextPrimary: colors.blue[100],
-
-      darkSecondary: colors.purple[900],
-      darkTextSecondary: colors.purple[100]
+      navy: {
+        DEFAULT: '#0c1f3f',
+        light: '#142b55',
+        dark: '#07122a',
+      },
+      gold: {
+        DEFAULT: '#c9a96e',
+        light: '#dfc28f',
+        dark: '#a8893a',
+      },
+      cream: {
+        DEFAULT: '#f8f4ef',
+        dark: '#ede8e0',
+      },
+      charcoal: '#1c1c1e',
     },
     fontFamily: {
-      sans: ['Roboto', 'Poppins', ...defaultTheme.fontFamily.sans]
+      serif: ['"Playfair Display"', 'Georgia', 'Cambria', 'serif'],
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
     },
     gridTemplateRows: {
-      // Simple 50 column grid
-      50: 'repeat(50, minmax(0, 1fr))'
+      50: 'repeat(50, minmax(0, 1fr))',
     },
     gridTemplateColumns: {
-      // Simple 50 column grid
-      50: 'repeat(50, minmax(0, 1fr))'
+      50: 'repeat(50, minmax(0, 1fr))',
     }
   }
 };
